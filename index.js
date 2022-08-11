@@ -1,11 +1,11 @@
 import chalk from 'chalk';
+import * as fs from 'fs';
 
-console.log(chalk.blue('start!'));
-
-const paragraph = 'text returned by a function';
-
-function text(string) {
-  return string;
+function getArchive(pathArchive) {
+  const encoding = 'utf-8';
+  fs.readFile(pathArchive, encoding, (_, text) => {
+    console.log(chalk.green(text));
+  })
 }
 
-console.log(text(paragraph));
+getArchive('./archives/textLink.md');
