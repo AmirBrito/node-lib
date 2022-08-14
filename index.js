@@ -6,9 +6,14 @@ function handleError(error) {
 }
 
 async function getArchive(pathArchive) {
-  const encoding = 'utf-8';
-  const text =  await fs.promises.readFile(pathArchive, encoding)
-  console.log(chalk.blue(text))
+  try {
+    const encoding = 'utf-8';
+    const text =  await fs.promises.readFile(pathArchive, encoding)
+    console.log(chalk.blue(text))
+  } catch (e) {
+    handleError(e)
+  }
+
 }
 
 getArchive('./archives/textLink.md');
