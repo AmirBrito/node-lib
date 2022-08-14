@@ -1,0 +1,11 @@
+{
+  "name": "project-two",
+  "version": "1.0.0",
+  "description": "backend example to alura articles",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "chalk": "^5.0.1"
+  }
+}
