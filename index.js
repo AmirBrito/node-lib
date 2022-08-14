@@ -9,7 +9,7 @@ function getLinks(text) {
   while(( temp = regex.exec(text)) != null) {
       linksResult.push({ [temp[1]]: temp[2] });
   }
-  console.log(linksResult);
+  return linksResult;
 }
 
 function handleError(error) {
@@ -24,7 +24,6 @@ async function getArchive(pathArchive) {
   } catch (e) {
     handleError(e)
   }
-
 }
 
 getArchive('./archives/textLink.md');
