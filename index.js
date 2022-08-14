@@ -5,14 +5,10 @@ function handleError(error) {
   throw new Error(chalk.yellow(error))
 }
 
-function getArchive(pathArchive) {
+async function getArchive(pathArchive) {
   const encoding = 'utf-8';
-
-  fs.promises
-  .readFile(pathArchive, encoding)
-  .then((text) => console.log(chalk.green(text)))
-  .catch((error) => handleError(error))
-
+  const text =  await fs.promises.readFile(pathArchive, encoding)
+  console.log(chalk.blue(text))
 }
 
 getArchive('./archives/textLink.md');
